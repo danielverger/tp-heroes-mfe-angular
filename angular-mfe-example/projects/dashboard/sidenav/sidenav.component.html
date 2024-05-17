@@ -1,0 +1,15 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav class="sidenav-wrapper" #sidenav mode="side" [(opened)]="showSideNav">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let menu of menuList" [routerLink]="[menu.route]" >
+          {{menu.name}}
+      </mat-list-item>
+     </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

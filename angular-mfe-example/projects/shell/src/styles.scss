@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.loader-dialog .mat-mdc-dialog-container .mdc-dialog__surface  {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.info-snackbar.mat-mdc-snack-bar-container .mdc-snackbar__surface{
+  background-color: green; 
+  color: rgb(10, 66, 10);
+  height: 60px;
+  margin-top: 65px;
+}
+
+.error-snackbar.mat-mdc-snack-bar-container .mdc-snackbar__surface{
+  background-color: red; 
+  height: 60px;
+  margin-top: 65px;
+}
+
+.warning-snackbar.mat-mdc-snack-bar-container .mdc-snackbar__surface{
+  background-color: orange; 
+  color: orangered;
+  height: 60px;
+  margin-top: 65px;
+}

@@ -1,0 +1,28 @@
+<mat-card>
+  <form [formGroup]="heroForm" (ngSubmit)="saveHero()">
+    <mat-card-header class="pt-3 pb-3">
+      <mat-card-title>{{titleCard}}</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div class="pt-3 row" cdkTrapFocus [cdkTrapFocusAutoCapture]="isAddHero">
+        <mat-form-field class="col-2">
+          <mat-label>Id</mat-label>
+          <input type="text" matInput formControlName="id">
+        </mat-form-field>
+        <mat-form-field class="col-6">
+          <mat-label>Name</mat-label>
+          <input id="inputName" appUppercase type="text" 
+            matInput formControlName="name" #inputName>
+          <mat-error *ngIf="heroForm.get('name')?.hasError('required')">
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end" class="p-3">
+      <button mat-flat-button type="button" [routerLink]="['/dashboard/heroes']">Cancel</button>
+      <button #saveButton mat-flat-button type="submit" color="primary" [disabled]="heroForm.invalid || isSaving">Save</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
